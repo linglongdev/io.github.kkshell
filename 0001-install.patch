@@ -1,0 +1,37 @@
+From 49f912723b27be07e91b7f587e1d815051dc7c27 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 10 Aug 2024 18:52:36 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                                | 1 -
+ sources/thirdparty/qtermwidget/CMakeLists.txt | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b8cc6db..b05508e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+-set(CMAKE_INSTALL_PREFIX "/usr")
+ 
+ add_subdirectory(sources)
+ 
+diff --git a/sources/thirdparty/qtermwidget/CMakeLists.txt b/sources/thirdparty/qtermwidget/CMakeLists.txt
+index c30f633..8adfd9b 100644
+--- a/sources/thirdparty/qtermwidget/CMakeLists.txt
++++ b/sources/thirdparty/qtermwidget/CMakeLists.txt
+@@ -34,7 +34,6 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ set(QT_MINIMUM_VERSION "5.8.0")
+ set(LXQTBT_MINIMUM_VERSION "0.4.0")
+ 
+-set(CMAKE_INSTALL_PREFIX "/usr")
+ 
+ find_package(Qt5Widgets "${QT_MINIMUM_VERSION}" REQUIRED)
+ find_package(Qt5LinguistTools "${QT_MINIMUM_VERSION}" REQUIRED)
+-- 
+2.43.4
+

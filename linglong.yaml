@@ -1,0 +1,30 @@
+version: "1"
+
+package:
+  id: io.github.kkshell
+  name: kkshell
+  version: 0.0.0.1
+  kind: app
+  description: |
+    A simple terminal for Linux。support serial, ssh, telnet, local shell 。
+
+command:
+  - /opt/apps/io.github.kkshell/files/bin/kkshell
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/qiushao/kkshell.git
+    version: master
+    commit: c6494c3426745efa101add4372999cf21aac2f7e
+
+build: |
+  cd /project/linglong/sources/kkshell.git
+  git apply ../../../0001-install.patch
+  mkdir build
+  cd build
+  cmake .. \
+        -DCMAKE_INSTALL_PREFIX=${PREFIX}
+  cmake --build . --target install
